@@ -297,7 +297,6 @@ address {
     margin-top: 12px;
     display: flex;
     justify-content: center;
-    gap: 24px;
 }
 
 .team-socials li {
@@ -310,7 +309,7 @@ address {
 }
 
 .social-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -341,6 +340,7 @@ address {
 .social-list {
     display: flex;
     gap: 16px;
+    gap: 24px;
 }
 
 .team-name {
@@ -431,7 +431,7 @@ address {
 
  .page-footer .container {
      display: flex;
-     align-items: flex-start;
+     align-items: baseline;
      gap: 120px;
 }
 
@@ -462,4 +462,9 @@ address {
      margin-bottom: 16px;
      color: #f4f4fd;
      font-weight: 500;
+ }
+
+ .page-footer .social-link:hover,
+ .page-footer .social-link:focus {
+     background-color: #31d0aa;
  }
