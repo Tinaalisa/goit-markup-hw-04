@@ -111,6 +111,23 @@ address {
     font-weight: 500;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav-link.current {
+    color: #404bbf;
+    position: relative;
+}
+
+.nav-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
 }
 
 .contacts {
@@ -128,6 +145,7 @@ address {
     padding: 24px 0;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -140,7 +158,12 @@ address {
 .hero {
     padding-top: 188px;
     padding-bottom: 188px;
-    background-color: #2e2f42;
+    background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/people-office-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -156,6 +179,7 @@ address {
 
 .hero-btn {
     display: block;
+    margin: 0 auto;
     height: 56px;
     border: none;
     border-radius: 4px;
@@ -168,6 +192,7 @@ address {
     color: #ffffff;
     background-color: #4d5ae5;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -182,6 +207,22 @@ address {
 
 .strengths-item {
     flex-basis: calc((100% - 72px) / 4);
+}
+
+.strengths-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.icon {
+    fill: currentColor;
+    color: #2e2f42;
 }
 
 .strengths-subtitle {
@@ -241,8 +282,58 @@ address {
 }
 
 .team-card {
-    padding: 32px 0;
+    padding: 32px 0 32px;
     text-align: center;
+}
+
+.team-socials {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.team-socials li {
+    flex: 0 0 auto;
+}
+
+.social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: #404bbf;
+    outline: none;
+}
+
+.social-link svg {
+    fill: #f4f4fd;
+}
+
+.social-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.social-list {
+    display: flex;
+    gap: 16px;
 }
 
 .team-name {
@@ -267,12 +358,41 @@ address {
  .portfolio-item {
      flex-basis: calc((100% - 48px) / 3);
      background-color: #ffffff;
+
+    position: relative;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .portfolio-item:hover,
+ .portfolio-item:focus-within {
+     box-shadow:
+         0px 1px 6px rgba(46, 47, 66, 0.08),
+         0px 1px 1px rgba(46, 47, 66, 0.16),
+         0px 2px 1px rgba(46, 47, 66, 0.08);
  }
 
  .portfolio-card {
      border: 1px solid #e7e9fc;
      border-top: none;
      padding: 32px 16px;
+ }
+
+ .portfolio-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(77, 90, 229, 0.9);
+     color: #f4f4fd;
+     padding: 40px 32px;
+     transform: translateY(100%);
+     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .portfolio-item:hover .portfolio-overlay,
+ .portfolio-item:focus-within .portfolio-overlay {
+     transform: translateY(0);
  }
 
  .portfolio-name {
@@ -288,6 +408,11 @@ address {
      color: #434455;
  }
 
+ .portfolio-thumb {
+     position: relative;
+     overflow: hidden;
+ }
+
  .page-footer {
      padding: 100px 0;
      background-color: #2e2f42;
@@ -295,15 +420,18 @@ address {
  }
 
  .page-footer .container {
-     display: block;
- }
+display: flex;
+    align-items: flex-start;
+    gap: 120px;
+}
 
  .footer-container {
      display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-     gap: 16px;
-     max-width: 264px;
+     gap: 120px;
+ }
+
+ .footer-brand {
+    max-width: 264px;
  }
 
  .footer-logo .logo-part {
@@ -317,4 +445,11 @@ address {
  
  .footer-text {
      max-width: 264px;
+    color: #f4f4fd;
+ }
+
+ .footer-social-title {
+     margin-bottom: 16px;
+     color: #f4f4fd;
+     font-weight: 500;
  }
