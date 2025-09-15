@@ -459,7 +459,7 @@ address {
 
  .footer-social-title {
      margin-bottom: 16px;
-     color: #f4f4fd;
+     color: var(--white, #ffffff);
      font-weight: 500;
      font-size: 16px;
      line-height: 1.5;
