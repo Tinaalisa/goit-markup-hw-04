@@ -297,6 +297,7 @@ address {
     margin-top: 12px;
     display: flex;
     justify-content: center;
+    gap: 24px;
 }
 
 .team-socials li {
@@ -309,7 +310,7 @@ address {
 }
 
 .social-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -336,10 +337,10 @@ address {
     fill: currentColor;
 }
 
-.social-list {
-    display: flex;
-    gap: 16px;
-    gap: 24px;
+.footer-socials .social-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
 }
 
 .team-name {
@@ -389,7 +390,7 @@ address {
      left: 0;
      width: 100%;
      height: 100%;
-     background-color: rgba(77, 90, 229, 0.9);
+     background-color: #4d5ae5;
      color: #f4f4fd;
      padding: 40px 32px;
     font-size: 16px;
@@ -431,16 +432,15 @@ address {
  .page-footer .container {
      display: flex;
      align-items: baseline;
-     gap: 120px;
 }
 
  .footer-container {
      display: flex;
-     gap: 120px;
 } 
 
  .footer-brand {
     max-width: 264px;
+    margin-right: 120px;
  }
 
  .footer-logo .logo-part {
@@ -463,7 +463,12 @@ address {
      font-weight: 500;
  }
 
- .page-footer .social-link:hover,
- .page-footer .social-link:focus {
+ .footer-socials {
+     display: flex;
+     gap: 16px;
+ }    
+
+ .footer-socials .social-link:hover,
+ .footer-socials .social-link:focus {
      background-color: #31d0aa;
  }
